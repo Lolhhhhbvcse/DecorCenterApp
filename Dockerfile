@@ -4,7 +4,10 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 # Fase 2: Ejecución
-FROM eclipse-temurin:17-jre-jammy
-COPY --from=build /target/*.jar app.jar
+FROM tomcat:9-jdk17-openjdk-slim
+# Borramos el contenido por defecto de Tomcat
+RUN rm -rf /usr/local/tomcat/webapps/*
+# Copiamos tu archivo war generado a la carpeta webapps de Tomcat
+COPY --from=build /target/*.war /usr/local/tomcat/webapps/ROOT.war
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "app.jar"]
+CMD ["catalina.sh", "run"]
