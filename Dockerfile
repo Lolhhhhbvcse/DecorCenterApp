@@ -4,7 +4,7 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 # Fase 2: Ejecución
-FROM tomcat:9-jdk17-openjdk-slim
+FROM tomcat:10.1-jdk17-openjdk-slim
 # Borramos el contenido por defecto de Tomcat
 RUN rm -rf /usr/local/tomcat/webapps/*
 # Copiamos tu archivo war generado a la carpeta webapps de Tomcat
