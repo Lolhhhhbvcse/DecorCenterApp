@@ -34,7 +34,6 @@
             <tr>
                 <th>#</th>
                 <th>Usuario</th>
-                <th>Fecha</th>
                 <th>Total</th>
                 <th>Estado</th>
             </tr>
@@ -44,7 +43,6 @@
                 <tr>
                     <td>#<c:out value="${pedido.id}"/></td>
                     <td>ID <c:out value="${pedido.usuarioId}"/></td>
-                    <td><fmt:formatDate value="${pedido.fecha}" pattern="dd/MM/yyyy HH:mm"/></td>
                     <td>S/ <fmt:formatNumber value="${pedido.total}" pattern="#,##0.00"/></td>
                     <td><span class="badge badge-${pedido.estado.toLowerCase()}"><c:out value="${pedido.estado}"/></span></td>
                 </tr>
