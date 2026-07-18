@@ -20,10 +20,6 @@
             <input type="email" name="email" required>
         </div>
         <div class="form-grupo">
-            <label>RUT</label>
-            <input type="text" name="rut">
-        </div>
-        <div class="form-grupo">
             <label>Dirección</label>
             <input type="text" name="direccion">
         </div>
@@ -31,6 +27,16 @@
             <label>Teléfono</label>
             <input type="text" name="telefono">
         </div>
+        <!-- Campos de contraseña agregados -->
+        <div class="form-grupo">
+            <label>Contraseña</label>
+            <input type="password" name="password" required>
+        </div>
+        <div class="form-grupo">
+            <label>Confirmar contraseña</label>
+            <input type="password" name="confirmar" required>
+        </div>
+        
         <button type="submit" class="btn btn-primario" style="width:100%;">Crear cuenta</button>
     </form>
 
